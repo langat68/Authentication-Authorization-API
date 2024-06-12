@@ -1,5 +1,5 @@
 import { Hono } from "hono";
-import { listState, getState, createState, updateState, deleteState} from "./state.controller"
+import { listState, getState, createState, updateState, deleteState,getStatewithcity} from "./state.controller"
 import { zValidator } from "@hono/zod-validator";
 import { stateSchema } from "../validators";
 export const stateRouter = new Hono();
@@ -16,3 +16,5 @@ stateRouter.put("/state/:id", updateState)
 stateRouter.delete("/state/:id", deleteState)
 
 //https:domai.com/state?limit=10
+
+stateRouter.get("/state-with-cities",getStatewithcity)

@@ -6,6 +6,7 @@ GET http://localhost:8000/orders
 ###
 GET http://localhost:8000/state
 ###
+
 GET http://localhost:8000/city
 ###
 GET http://localhost:8000/category
@@ -33,7 +34,7 @@ GET http://localhost:8000/users
 Authorization:.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJBaW5hQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiZXhwIjoxNzE4MTM0NDkxfQ.AACBH5VM5AHW7d6LZ8nxF9bwng-agqGx_bI8BzxA-DU
 ###
 GET http://localhost:8000/users
-Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJBaW5hQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiZXhwIjoxNzE4MTM0Mzk4fQ.ePvutS53co4t56TmbZUUGDRf4YV9fMwg3oWXODR8Sew
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb29yZUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMDQ5NDd9.2CyrP6P5RKkVTGnWT2Ao8xSNanMqVO_10c7zIaYDKhY
 ###
 POST  http://localhost:8000/users
 
@@ -47,10 +48,13 @@ POST  http://localhost:8000/users
     "password":"pass",
     "address": "Kutus, Kenya"
 }
+
+//orders delete
 ###
-DELETE http://localhost:8000/users/1
+DELETE http://localhost:8000/orders/29
 ###
 POST http://localhost:8000/users
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb29yZUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMTE1MDN9.2bsq8pc8T6kbxxhuXZNG0CnH3zbMsUvmJmGPMEiNRy8
 Content-Type: application/json
 
 {
@@ -72,14 +76,30 @@ Content-Type: application/json
 
 {
   
-  "price": 75,
-  "discount": 5,
+  "price": 70,
+  "discount": 0,
   "final_price": 70,
   "comment": "Add crips",
   "restaurant_id" : 10,
-  "delivery_address_id": 11,
+  "delivery_address_id": 19,
   "user_id" : 6,
-  "driver_id": 6
+  "driver_id": 3
+}
+
+###
+POST http://localhost:8000/orders
+Content-Type: application/json
+
+{
+  
+  "price": 120,
+  "discount": 20,
+  "final_price": 100,
+  "comment": "Add sauce",
+  "restaurant_id" : 10,
+  "delivery_address_id": 19,
+  "user_id" : 6,
+  "driver_id": 3
 }
 ###
 POST http://localhost:8000/menuItem
@@ -237,3 +257,34 @@ Content-Type: application/json
     "password": "767",
     "role": "admin"
 }
+
+###
+POST http://localhost:8000/login
+Content-Type: application/json
+
+
+
+
+###
+POST http://localhost:8000/register
+Content-Type: application/json
+
+{
+   
+    "userId": 8,
+    "email": "Moore@gmail.com",
+    "password": "767",
+    "role": "admin"
+}
+
+###
+POST http://localhost:8000/login
+Content-Type: application/json
+
+{
+    "email":"Moore@gmail.com",
+    "password":"767"
+}
+
+###
+GET http://localhost:8000/state-with-cities
