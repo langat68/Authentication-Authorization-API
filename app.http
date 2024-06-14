@@ -34,7 +34,7 @@ DELETE http://localhost:8000/orders/29
 
 
 ###
-GET http://localhost:8000/state
+GET http://localhost:8000/
 
 
 ###
@@ -54,7 +54,9 @@ DELETE http://localhost:8000/state/8
 
 ###
 
-GET http://localhost:8000/city
+GET http://localhost:8000/ok
+
+
 ###
 GET http://localhost:8000/category
 ###
