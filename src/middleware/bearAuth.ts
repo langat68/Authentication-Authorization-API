@@ -1,11 +1,13 @@
 import "dotenv/config";
 import {verify}from "hono/jwt"
-import { Context, Next} from "hono";
+import { Context, Next} from "hono";//  Types for handling request context and middleware flow
 export interface TPayload {
     sub :string,
     role : string,
     exp :number
-}
+}// Defines the structure of the payload within the JWT,ie subject,role and expiration time
+
+
 //authentication middleware
  export const verifyToken=async(token:string,secret:string) =>{
     try{
@@ -28,6 +30,7 @@ export interface TPayload {
  }
 
  
+ // Role-specific middleware
  export const adminRoleAuth =async(c: Context,next: Next)=>await authMiddleware(c,next,"admin")
  export const userRoleAuth =async(c: Context,next: Next)=>await authMiddleware(c,next,"user")
  export const userAdminRoleAuth =async(c: Context,next: Next)=>await authMiddleware(c,next,"userAdmin")

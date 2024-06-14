@@ -1,10 +1,57 @@
 
 GET http://localhost:8000/ok/
 
+
+        //orders 
 ###
 GET http://localhost:8000/orders
+
+
+###
+POST http://localhost:8000/orders
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJIZW5yeUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyODg5Nzl9.9aNbQtO6opDbQLkKoE4SvTr0_-FKjsTJ33OWVqNMSNY
+Content-Type: application/json
+
+{
+  
+  "price": 70,
+  "discount": 0,
+  "final_price": 70,
+  "comment": "Add crips",
+  "restaurant_id" : 10,
+  "delivery_address_id": 19,
+  "user_id" : 6,
+  "driver_id": 3
+}
+
+###
+DELETE http://localhost:8000/orders/29
+
+
+
+
+                                   // state
+
+
 ###
 GET http://localhost:8000/state
+
+
+###
+
+POST http://localhost:8000/state
+Content-Type: application/json
+
+{
+   
+    "name": "Florida",
+    "code": "51"
+}
+
+
+###
+DELETE http://localhost:8000/state/8
+
 ###
 
 GET http://localhost:8000/city
@@ -31,60 +78,13 @@ GET http://localhost:8000/restaurantOwner
 GET http://localhost:8000/restaurant
 ###
 GET http://localhost:8000/users
-Authorization:.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJBaW5hQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiZXhwIjoxNzE4MTM0NDkxfQ.AACBH5VM5AHW7d6LZ8nxF9bwng-agqGx_bI8BzxA-DU
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJIZW5yeUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyOTEwNTJ9.NAFuOaoDNsqg0N0s2UcG6qRrVDiXA3om7xfIeEDhabw
+
 ###
 GET http://localhost:8000/users
-Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb29yZUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMDQ5NDd9.2CyrP6P5RKkVTGnWT2Ao8xSNanMqVO_10c7zIaYDKhY
-###
-POST  http://localhost:8000/users
-
-{
- "name": "Bukayomi ",
-    "contact_phone": "078954267",
-    "phone_verified":true,
-    "email":"bukayo@gmail.com",
-    "email_verified":false,
-    "confirmation_code":"ikg6",
-    "password":"pass",
-    "address": "Kutus, Kenya"
-}
-
-//orders delete
-###
-DELETE http://localhost:8000/orders/29
-###
-POST http://localhost:8000/users
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJNb29yZUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyMTE1MDN9.2bsq8pc8T6kbxxhuXZNG0CnH3zbMsUvmJmGPMEiNRy8
-Content-Type: application/json
-
-{
-   
-    "name": "Bukayomi ",
-    "contact_phone": "078954267",
-    "phone_verified":true,
-    "email":"bukayo@gmail.com",
-    "email_verified":false,
-    "confirmation_code":"ikg6",
-    "password":"pass",
-    "address": "Kutus, Kenya"
-}
-
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJIZW5yeUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyOTEwNTJ9.NAFuOaoDNsqg0N0s2UcG6qRrVDiXA3om7xfIeEDhabw
 
 ###
-POST http://localhost:8000/orders
-Content-Type: application/json
-
-{
-  
-  "price": 70,
-  "discount": 0,
-  "final_price": 70,
-  "comment": "Add crips",
-  "restaurant_id" : 10,
-  "delivery_address_id": 19,
-  "user_id" : 6,
-  "driver_id": 3
-}
 
 ###
 POST http://localhost:8000/orders
@@ -128,16 +128,6 @@ Content-Type: application/json
    
     "owner_id": 6,
     "restaurant_id": 10
-}
-###
-
-POST http://localhost:8000/state
-Content-Type: application/json
-
-{
-   
-    "name": "Florida",
-    "code": "51"
 }
 ###
 POST http://localhost:8000/state
@@ -262,7 +252,12 @@ Content-Type: application/json
 POST http://localhost:8000/login
 Content-Type: application/json
 
+{
 
+    
+    "email":"Jazz@gmail.com",
+    "password":"767"
+}
 
 
 ###
@@ -288,3 +283,55 @@ Content-Type: application/json
 
 ###
 GET http://localhost:8000/state-with-cities
+
+
+////               //////
+
+
+###
+GET http://localhost:8000/users
+Authorization: eyJhbGcizI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJIZW5yeUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyODcxODR9.r4hlMbh-2t4ZV_lp9PIf3WAa22R2PKCMZdg2Agv_J-o
+
+
+###
+POST http://localhost:8000/register
+Content-Type: application/json
+
+{
+   
+    "userId": 8,
+    "email": "Henry@gmail.com",
+    "password": "767",
+    "role": "admin"
+ }
+
+###
+POST http://localhost:8000/login
+Content-Type: application/json
+
+{
+    "email":"Henry@gmail.com",
+    "password":"767"
+}
+
+
+// states table
+
+###
+GET http://localhost:8000/state
+//uthorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJIZW5yeUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyOTEzODd9.3hT6uaRrqwyZKr3PP5gjuh7ZC0YuYgaVik-SMiFLbZI
+
+###
+POST http://localhost:8000/state
+//Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJIZW5yeUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyOTE1OTJ9.PEiPefEKH_Qj4DTCUSNp6CrIegaDxxYuaxWAQbLD-cg
+Content-Type: application/json
+
+{
+    "name": "Texas",
+    "code": "597"
+}
+
+
+###
+DELETE http://localhost:8000/state/14
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJIZW5yeUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MTgyOTIyMTd9.kAUM67BbgzIuODqGCrZAdXnDgWpEhgtVoqXJ0-D9jtM
