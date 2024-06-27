@@ -279,8 +279,8 @@ app.get('/', (c) => {
 </body>
 </html>
 
-    `)
-})
+    `);
+});
 
 serve({
   fetch: app.fetch,
